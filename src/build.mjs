@@ -22,6 +22,7 @@ fs.rmSync(PUBLIC, { recursive: true, force: true });
 fs.mkdirSync(PUBLIC, { recursive: true });
 copyDir(path.join(ROOT, 'assets'), path.join(PUBLIC, 'assets'));
 fs.copyFileSync(path.join(ROOT, 'src', 'copy-protection.js'), path.join(PUBLIC, 'copy-protection.js'));
+fs.copyFileSync(path.join(ROOT, 'googlebe37ea7846b044c6.html'), path.join(PUBLIC, 'googlebe37ea7846b044c6.html'));
 
 function esc(value = '') {
   return String(value)
@@ -334,4 +335,6 @@ function copyDir(src, dst) {
 }
 
 console.log(`Built ${published.length} published video page(s).`);
+
+
 
