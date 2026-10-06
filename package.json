@@ -1,0 +1,9 @@
+{
+  "name": "curious-reality-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "preview": "node src/preview.mjs"
+  }
+}

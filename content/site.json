@@ -1,0 +1,9 @@
+{
+  "name": "Curious Reality",
+  "handle": "@curiousrealityworld",
+  "youtube": "https://www.youtube.com/@curiousrealityworld",
+  "tagline": "Stay Curious. Look Deeper. Understand Reality.",
+  "description": "Curious Reality explores the questions behind the world around us—turning curiosity into understanding through research, explanation, and discovery.",
+  "language": {"primary": "en", "secondary": "bn"},
+  "website": {"baseUrl": "https://curiousreality.github.io"}
+}
