@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+﻿import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -244,7 +244,7 @@ function baseHtml({ title, description, canonical, body, jsonLd = [], active = '
 
 function renderVideoCard(v) {
   const ratioClass = v.type === 'short' ? ' is-short' : ' is-long';
-  return `<article class="video-card${ratioClass}"><a class="thumb${ratioClass}" href="/${esc(v.slug)}/" aria-label="Open ${esc(v.title)}"><img src="${esc(v.thumbnail)}" data-fallback="${esc(v.thumbnail_fallback || '')}" alt="${esc(v.title)}" loading="lazy" decoding="async"><span class="type-pill">${esc(v.type.toUpperCase())}</span><span class="play-dot">${icon.play}</span></a><div class="video-card-body"><p class="eyebrow">${esc(v.type === 'short' ? 'SHORT' : 'LONG-FORM')}${v.display_date ? ` · ${esc(v.display_date)}` : ''}</p><h3><a href="/${esc(v.slug)}/">${esc(v.title)}</a></h3>${v.summary ? `<p>${esc(v.summary)}</p>` : ''}</div></article>`;
+  return `<article class="video-card${ratioClass}"><a class="thumb${ratioClass}" href="/${esc(v.slug)}/" aria-label="Open ${esc(v.title)}"><img src="${esc(v.thumbnail)}" data-fallback="${esc(v.thumbnail_fallback || '')}" alt="${esc(v.title)}" loading="lazy" decoding="async"><span class="type-pill">${esc(v.type.toUpperCase())}</span><span class="play-dot">${icon.play}</span></a><div class="video-card-body"><p class="eyebrow">${esc(v.type === 'short' ? 'SHORT' : 'LONG-FORM')}${v.display_date ? ` Â· ${esc(v.display_date)}` : ''}</p><h3><a href="/${esc(v.slug)}/">${esc(v.title)}</a></h3>${v.summary ? `<p>${esc(v.summary)}</p>` : ''}</div></article>`;
 }
 
 function renderSection(section) {
@@ -279,7 +279,7 @@ const videoIndexBody = `<section class="page-hero"><p class="kicker">THE ARCHIVE
 fs.mkdirSync(path.join(PUBLIC, 'videos'), { recursive: true });
 fs.writeFileSync(path.join(PUBLIC, 'videos', 'index.html'), baseHtml({ title: 'Videos - Curious Reality', description: 'Explore every published Curious Reality video and the questions behind them.', canonical: site.website.baseUrl + '/videos/', body: videoIndexBody, jsonLd: [org, websiteLd], active: 'videos' }));
 
-const exploreBody = `<section class="page-hero"><p class="kicker">EXPLORE</p><h1>Follow the question.</h1><p>Search the archive by idea, phrase, or subject.</p></section><section class="section"><div class="search-box"><label for="site-search">Search Curious Reality</label><input id="site-search" data-video-search type="search" placeholder="Try: electricity, memory, internet…" autocomplete="off"></div><div class="video-grid" data-video-results>${published.length ? published.map(renderVideoCard).join('') : `<div class="empty-state"><h3>New discoveries are on the way.</h3><p>The archive will grow with every question we investigate.</p></div>`}</div></section>`;
+const exploreBody = `<section class="page-hero"><p class="kicker">EXPLORE</p><h1>Follow the question.</h1><p>Search the archive by idea, phrase, or subject.</p></section><section class="section"><div class="search-box"><label for="site-search">Search Curious Reality</label><input id="site-search" data-video-search type="search" placeholder="Try: electricity, memory, internetâ€¦" autocomplete="off"></div><div class="video-grid" data-video-results>${published.length ? published.map(renderVideoCard).join('') : `<div class="empty-state"><h3>New discoveries are on the way.</h3><p>The archive will grow with every question we investigate.</p></div>`}</div></section>`;
 fs.mkdirSync(path.join(PUBLIC, 'explore'), { recursive: true });
 fs.writeFileSync(path.join(PUBLIC, 'explore', 'index.html'), baseHtml({ title: 'Explore - Curious Reality', description: 'Search and explore the Curious Reality knowledge archive.', canonical: site.website.baseUrl + '/explore/', body: exploreBody, jsonLd: [org, websiteLd], active: 'explore' }));
 
@@ -336,3 +336,4 @@ function copyDir(src, dst) {
 }
 
 console.log(`Built ${published.length} published video page(s).`);
+
