@@ -279,7 +279,7 @@ const videoIndexBody = `<section class="page-hero"><p class="kicker">THE ARCHIVE
 fs.mkdirSync(path.join(PUBLIC, 'videos'), { recursive: true });
 fs.writeFileSync(path.join(PUBLIC, 'videos', 'index.html'), baseHtml({ title: 'Videos - Curious Reality', description: 'Explore every published Curious Reality video and the questions behind them.', canonical: site.website.baseUrl + '/videos/', body: videoIndexBody, jsonLd: [org, websiteLd], active: 'videos' }));
 
-const exploreBody = `<section class="page-hero"><p class="kicker">EXPLORE</p><h1>Follow the question.</h1><p>Search the archive by idea, phrase, or subject.</p></section><section class="section"><div class="search-box"><label for="site-search">Search Curious Reality</label><input id="site-search" data-video-search type="search" placeholder="Try: electricity, memory, internetâ€¦" autocomplete="off"></div><div class="video-grid" data-video-results>${published.length ? published.map(renderVideoCard).join('') : `<div class="empty-state"><h3>New discoveries are on the way.</h3><p>The archive will grow with every question we investigate.</p></div>`}</div></section>`;
+const exploreBody = `<section class="page-hero"><p class="kicker">EXPLORE</p><h1>Follow the question.</h1><p>Search the archive by idea, phrase, or subject.</p></section><section class="section"><div class="search-box"><label for="site-search">Search Curious Reality</label><input id="site-search" data-video-search type="search" placeholder="Search the archive..." autocomplete="off"></div><div class="video-grid" data-video-results>${published.length ? published.map(renderVideoCard).join('') : `<div class="empty-state"><h3>New discoveries are on the way.</h3><p>The archive will grow with every question we investigate.</p></div>`}</div></section>`;
 fs.mkdirSync(path.join(PUBLIC, 'explore'), { recursive: true });
 fs.writeFileSync(path.join(PUBLIC, 'explore', 'index.html'), baseHtml({ title: 'Explore - Curious Reality', description: 'Search and explore the Curious Reality knowledge archive.', canonical: site.website.baseUrl + '/explore/', body: exploreBody, jsonLd: [org, websiteLd], active: 'explore' }));
 
@@ -336,4 +336,5 @@ function copyDir(src, dst) {
 }
 
 console.log(`Built ${published.length} published video page(s).`);
+
 
