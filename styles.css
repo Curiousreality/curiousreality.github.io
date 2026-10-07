@@ -274,3 +274,28 @@ linear-gradient(180deg,rgba(5,7,10,.76) 0%,rgba(5,7,10,.04) 16%,rgba(5,7,10,.02)
   .video-card .thumb.is-short{max-height:480px}
   .video-card .video-card-body{min-height:0}
 }
+
+/* Final archive controls */
+.video-filters{display:flex;align-items:center;gap:8px;margin:0 0 28px;padding:5px;width:max-content;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.018)}
+.filter-tab{appearance:none;border:0;border-radius:999px;padding:10px 16px;background:transparent;color:#858e99;font-size:11px;font-weight:750;letter-spacing:.10em;text-transform:uppercase;cursor:pointer;transition:color .2s ease,background .2s ease,box-shadow .2s ease,transform .2s ease}
+.filter-tab:hover{color:#e9edf2;background:rgba(255,255,255,.035)}
+.filter-tab:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.filter-tab.is-active{color:#0a0d11;background:#f1f4f7;box-shadow:0 7px 22px rgba(196,221,242,.09)}
+.video-card[hidden]{display:none!important}
+
+/* Final contact panel */
+.contact-panel{margin-top:76px;padding:30px;border:1px solid var(--line-strong);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.035),rgba(255,255,255,.012));box-shadow:0 18px 50px rgba(0,0,0,.15)}
+.contact-panel h2{max-width:650px;margin:10px 0 18px}
+.contact-email{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;border:1px solid rgba(132,194,255,.28);border-radius:999px;color:#bfe1fb;background:rgba(132,194,255,.055);font-size:14px;font-weight:650;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.contact-email:hover{transform:translateY(-1px);border-color:rgba(132,194,255,.52);background:rgba(132,194,255,.09)}
+
+/* YouTube lazy player */
+.player-poster{appearance:none;color:inherit;cursor:pointer}
+.player-poster img{user-select:none}
+.player-poster:hover .big-play{transform:translate(-50%,-50%) scale(1.06);border-color:rgba(132,194,255,.68);box-shadow:0 0 40px rgba(132,194,255,.13)}
+@media(max-width:640px){
+  .video-filters{width:100%;justify-content:space-between;margin-bottom:24px}
+  .filter-tab{flex:1;padding-inline:10px}
+  .contact-panel{margin-top:58px;padding:24px}
+  .contact-email{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
